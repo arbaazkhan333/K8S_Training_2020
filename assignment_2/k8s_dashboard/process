@@ -1,0 +1,17 @@
+Steps:
+1) Run the command to deploy the dashboard
+   kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
+2) Create a service account
+   kubectl create -f admin-user-serviceaccount.yaml
+3) Create RBAC rolebinding to access the api server
+   kubectl create -f admin-user-rbac.yaml
+4) Get the token 
+   4.1) kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
+   4.2) Copy the token
+5) Run the proxy server 
+   5.1) kubectl proxy
+   5.2) Provide the token in the k8s dashboard
+
+Links referred:
+1) https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+2) https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md

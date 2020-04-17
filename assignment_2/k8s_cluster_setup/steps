@@ -1,0 +1,13 @@
+Steps to create the k8s cluster:
+(I have created the cluster using Kind)
+1. Install docker
+2. Install go and setup it's path
+3. Install kind:
+   curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.7.0/kind-$(uname)-amd64"
+   chmod +x ./kind
+   mv ./kind /usr/bin/kind
+4. Create the cluster
+   kind create cluster
+
+Links referred:
+1) https://github.com/kubernetes-sigs/kind
