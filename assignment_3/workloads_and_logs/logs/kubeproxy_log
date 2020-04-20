@@ -1,0 +1,14 @@
+W0417 09:32:46.522976       1 server_others.go:323] Unknown proxy mode "", assuming iptables proxy
+I0417 09:32:46.531842       1 node.go:135] Successfully retrieved node IP: 172.17.0.2
+I0417 09:32:46.531870       1 server_others.go:145] Using iptables Proxier.
+I0417 09:32:46.532177       1 server.go:571] Version: v1.17.0
+I0417 09:32:46.532638       1 conntrack.go:100] Set sysctl 'net/netfilter/nf_conntrack_max' to 131072
+I0417 09:32:46.532675       1 conntrack.go:52] Setting nf_conntrack_max to 131072
+I0417 09:32:46.532860       1 conntrack.go:100] Set sysctl 'net/netfilter/nf_conntrack_tcp_timeout_established' to 86400
+I0417 09:32:46.532915       1 conntrack.go:100] Set sysctl 'net/netfilter/nf_conntrack_tcp_timeout_close_wait' to 3600
+I0417 09:32:46.533079       1 config.go:131] Starting endpoints config controller
+I0417 09:32:46.534467       1 shared_informer.go:197] Waiting for caches to sync for endpoints config
+I0417 09:32:46.533123       1 config.go:313] Starting service config controller
+I0417 09:32:46.536017       1 shared_informer.go:197] Waiting for caches to sync for service config
+I0417 09:32:46.634966       1 shared_informer.go:204] Caches are synced for endpoints config 
+I0417 09:32:46.636351       1 shared_informer.go:204] Caches are synced for service config 

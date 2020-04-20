@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: echo-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: echo-job
+        image: ubuntu
+        command: ["echo", "I have done my job :)"]
+      restartPolicy: Never
+  backoffLimit: 4

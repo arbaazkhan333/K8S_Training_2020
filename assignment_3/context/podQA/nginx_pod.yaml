@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-qa
+  namespace: qa
+  labels:
+    app: nginx-pod-qa
+spec:
+  containers:
+  - name: nginx-pod-qa
+    image: nginx:1.7.9
+    ports:
+    - containerPort: 80

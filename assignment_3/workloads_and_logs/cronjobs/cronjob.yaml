@@ -1,0 +1,18 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: ping-cronjob
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: ping-cronjob
+            image: busybox
+            args:
+            - /bin/sh
+            - -c
+            - ping 8.8.8.8
+          restartPolicy: OnFailure

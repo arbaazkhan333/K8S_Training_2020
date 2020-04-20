@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev
+  labels:
+    name: dev
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-dev
+  namespace: dev
+  labels:
+    app: nginx-pod-dev
+spec:
+  containers:
+  - name: nginx-pod-dev
+    image: nginx:1.7.9
+    ports:
+    - containerPort: 80
