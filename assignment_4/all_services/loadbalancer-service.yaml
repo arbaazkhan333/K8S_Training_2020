@@ -1,0 +1,18 @@
+#Maintainer: Arbaaz
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-loadbalancer
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  clusterIP: 10.105.2.79
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.0.2.127

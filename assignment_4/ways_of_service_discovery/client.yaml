@@ -1,0 +1,10 @@
+#Maintainer: Arbaaz
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client
+spec:
+  containers:
+  - name: client
+    image: tutum/curl
+    command: ["sleep", "9999999"]

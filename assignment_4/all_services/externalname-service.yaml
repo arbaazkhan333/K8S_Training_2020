@@ -1,0 +1,14 @@
+#Maintainer: Arbaaz
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-externalname
+spec:
+  type: ExternalName
+  externalName: my.webserver.example.com
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

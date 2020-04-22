@@ -1,0 +1,13 @@
+Q. Why Kubernetes relies on proxying to forward inbound traffic to backends ?
+
+A. Kubernetes relies on proxying to forward inbould traffic to backends because
+   we often expose services for our applications running inside pods. These 
+   services have their IP called cluster-ip, so whenever someone accesses the 
+   services it has to be forwarded to the concerned pod. Kubernetes ensures that
+   these service ips/ cluster ips are mapped to the concerned pods by using 
+   kube-proxy. Whenever an endpoint gets created the kube-proxy creates an IP table
+   forwading rule(in case of ip table mode)/ rules in data link layer(in case of IPVS
+   mode), so that the traffic bound for the Service’s IP:Port is proxied to an 
+   appropriate backend without the clients knowing anything about Kubernetes or 
+   Services or Pods.   
+    

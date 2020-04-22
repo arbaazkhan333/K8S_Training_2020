@@ -1,0 +1,10 @@
+#Maintainer: Arbaaz
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-without-selector
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
