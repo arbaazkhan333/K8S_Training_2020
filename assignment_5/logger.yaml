@@ -1,0 +1,19 @@
+#Maintainer: Arbaaz
+apiVersion: v1
+kind: Pod
+metadata:
+  name: logger
+  labels:
+    app: logger
+spec:
+  containers:
+  - name: logger-pod
+    image: arbaazkhan/logger:v1
+    #imagePullPolicy: Never
+    volumeMounts:
+    - name: loggerstorage
+      mountPath: logs
+  volumes:
+    - name: loggerstorage
+      persistentVolumeClaim:
+        claimName: logger-pv-claim
