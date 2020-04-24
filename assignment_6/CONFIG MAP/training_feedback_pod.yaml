@@ -7,7 +7,7 @@ spec:
   containers:
     - name: training-feedback
       image: arbaazkhan/training_feedback:v1
-      imagePullPolicy: Never
+      #imagePullPolicy: Never
       env:
         # Environment variable
         - name: RATING 
