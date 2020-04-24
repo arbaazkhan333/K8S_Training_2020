@@ -1,0 +1,60 @@
+#Maintainer: Arbaaz
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-k8s-training-feedback
+spec:
+  containers:
+    - name: training-feedback
+      image: arbaazkhan/training_feedback:v1
+      imagePullPolicy: Never
+      env:
+        # Environment variable
+        - name: RATING 
+          valueFrom:
+            configMapKeyRef:
+              name: cm-k8s-training-feedback
+              key: rating
+        - name: INSTRUCTOR
+          valueFrom:
+            configMapKeyRef:
+              name: cm-k8s-training-feedback
+              key: instructor
+        - name: COORDINATOR
+          valueFrom:
+            configMapKeyRef:
+              name: cm-k8s-training-feedback
+              key: coordinator
+        - name: SESSIONS 
+          valueFrom:
+            configMapKeyRef:
+              name: cm-k8s-training-feedback
+              key: sessions
+        - name: TOPICS_COVERED 
+          valueFrom:
+            configMapKeyRef:
+              name: cm-k8s-training-feedback
+              key: topics_covered
+        - name: DEMOS 
+          valueFrom:
+            configMapKeyRef:
+              name: cm-k8s-training-feedback
+              key: demos
+        - name: DOUBT_CLEARANCE 
+          valueFrom:
+            configMapKeyRef:
+              name: cm-k8s-training-feedback
+              key: doubt_clearance 
+        - name: ASSIGNMENTS 
+          valueFrom:
+            configMapKeyRef:
+              name: cm-k8s-training-feedback
+              key: assignments
+      volumeMounts:
+      - name: logs
+        mountPath: logs
+  volumes:
+  - name: logs
+    hostPath:
+      path: /logs
+      type: Directory    

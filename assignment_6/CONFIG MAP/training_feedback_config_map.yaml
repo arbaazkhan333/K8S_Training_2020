@@ -1,0 +1,15 @@
+#Maintainer: Arbaaz
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cm-k8s-training-feedback
+data:
+  # property-like keys; each key maps to a simple value
+  rating: "9/10"
+  instructor: "Akhilesh Verma"
+  coordinator: "Aditi Karwande"
+  sessions: "7"
+  topics_covered: "Completed majority of the topics of K8S."
+  demos: "There were enough demos shown by the instructor for each and every topic."
+  doubt_clearance: "The instructor cleared all the doubts whenever asked."
+  assignments: "All the assignments given are are very useful and ensures that the trainee has understands everything."

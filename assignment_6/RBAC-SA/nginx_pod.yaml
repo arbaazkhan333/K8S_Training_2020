@@ -1,0 +1,14 @@
+#Maintainer: Arbaaz
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  serviceAccountName: pod-viewer-service-account
+  containers:
+  - name: nginx-pod
+    image: nginx:1.7.9
+    ports:
+    - containerPort: 80

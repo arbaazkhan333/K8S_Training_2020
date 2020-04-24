@@ -1,0 +1,15 @@
+#Maintainer: Arbaaz
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  namespace: default
+  name: pod-viewer
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: pod-viewer-role
+subjects:
+- kind: ServiceAccount
+  name: pod-viewer-service-account
+  namespace: default
+
